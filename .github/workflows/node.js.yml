@@ -29,3 +29,5 @@ jobs:
     - run: npm run build
     - run: ls -al
     - run: pwd
+    - run: sudo rm -r /var/www/html/*
+    - run: sudo cp -a /home/ubuntu/actions-runner/_work/json-app/json-app/build/. /var/www/html/
