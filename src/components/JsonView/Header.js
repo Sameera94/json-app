@@ -29,7 +29,7 @@ function Header(props) {
       <Input
         type="text"
         value={heading}
-        placeholder="_ _ _ _ _ _ _"
+        placeholder="_ _ _ _ _ _ _ _"
         onChange={(e) => setHeading(e.target.value)}
       />
       <button onClick={() => addNewView()}>+</button>
