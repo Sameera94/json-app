@@ -20,7 +20,7 @@ const Input = styled.input`
 `
 
 function Header(props) {
-  const { data, addNewView, onFormatJSON } = props
+  const { addNewView, onFormatJSON } = props
   const [heading, setHeading] = useState('')
 
   return (
