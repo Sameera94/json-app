@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import JsonView from "../JsonView/JsonView";
 import { useState } from "react";
@@ -26,9 +26,6 @@ function MainView() {
   const onCloseView = (index) => {
     setJsonViews(jsonViews.filter(({ id }) => id !== index))
   }
-
-  // const isLastView = useMemo(() => viewId === data.length - 1, [viewId, data])
-
 
   return (
     <Root>
