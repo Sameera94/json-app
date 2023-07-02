@@ -30,4 +30,4 @@ jobs:
     - run: pwd
     - run: ls -al
     - run: sudo rm -r /var/www/html/*
-    - run: sudo cp -a ./build/. /var/www/html/
+    - run: sudo cp -a ./build/. /home/ubuntu/x/
