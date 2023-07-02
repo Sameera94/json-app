@@ -37,6 +37,11 @@ const Button = styled.button`
   background: none;
   border: 1px solid black;
   border-radius: 4px;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
 `
 
 const CloseButton = styled(Button)`

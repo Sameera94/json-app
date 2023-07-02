@@ -26,8 +26,10 @@ function JsonView(props) {
   const txtRef = useRef(null)
 
   const onFormatJSON = () => {
-    const jsonvalue =  JSON.parse(txtRef.current.value)
-    txtRef.current.value = JSON.stringify(jsonvalue, null, 2)
+    if (txtRef.current.value) {
+      const jsonvalue =  JSON.parse(txtRef.current.value)
+      txtRef.current.value = JSON.stringify(jsonvalue, null, 2)
+    }
   }
 
   return (
