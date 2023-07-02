@@ -10,7 +10,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       matrix:
@@ -30,4 +30,4 @@ jobs:
     - run: pwd
     - run: ls -al
     - run: sudo rm -r /var/www/html/*
-    - run: sudo cp -a ./build/. /home/ubuntu/x/
+    - run: sudo cp -a /home/ubuntu/actions-runner/_work/json-app/json-app/build/. /var/www/html/
