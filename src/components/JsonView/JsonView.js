@@ -3,7 +3,6 @@ import Header from "./Header"
 import styled from "styled-components";
 
 const Root = styled.div`
-  /* border: 1px solid black; */
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -11,18 +10,19 @@ const Root = styled.div`
 `
 
 const TextArea = styled.textarea`
-  /* border: '1px solid black'; */
-  /* width: '500px';  */
-  /* height: '98vh'; */
   height: 100%;
   border: none;
   resize: none;
   padding: 4px;
+
+  &:focus {
+    outline: none;
+  }
 `
 
 
 function JsonView(props) {
-  const { addNewView, className, data } = props
+  const { addNewView, onCloseView, className, jsonView, showAddButton, showCloseButton } = props
   const txtRef = useRef(null)
 
   const onFormatJSON = () => {
@@ -34,8 +34,11 @@ function JsonView(props) {
     <Root className={className}>
       <Header
         addNewView={addNewView}
+        onCloseView={onCloseView}
+        showAddButton={showAddButton}
+        showCloseButton={showCloseButton}
         onFormatJSON={onFormatJSON}
-        data={data}
+        jsonView={jsonView}
       />
       <TextArea
         ref={txtRef}

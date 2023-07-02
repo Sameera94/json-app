@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from "styled-components";
 import JsonView from "../JsonView/JsonView";
 import { useState } from "react";
@@ -12,7 +12,7 @@ const Root = styled.div`
 `
 
 function MainView() {
-  const [jsonViews, setJsonViews] = useState([{ id: 1 }, { id: 2 }])
+  const [jsonViews, setJsonViews] = useState([{ id: 0 }, { id: 1 }])
 
   const addNewView = () => {
     const lastJsonView = jsonViews[jsonViews.length - 1]
@@ -23,14 +23,24 @@ function MainView() {
     ])
   }
 
+  const onCloseView = (index) => {
+    setJsonViews(jsonViews.filter(({ id }) => id !== index))
+  }
+
+  // const isLastView = useMemo(() => viewId === data.length - 1, [viewId, data])
+
+
   return (
     <Root>
       {
-        jsonViews.map(jsonView => 
+        jsonViews.map((jsonView, index) => 
           <JsonView
             key={jsonView.id}
-            data={jsonView}
+            jsonView={jsonView}
+            showAddButton={index === jsonViews.length - 1}
+            showCloseButton={jsonViews.length > 1}
             addNewView={addNewView}
+            onCloseView={onCloseView}
           />
         )
       }
