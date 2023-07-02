@@ -17,6 +17,10 @@ const Input = styled.input`
   border: none;
   width: 40%;
   font-weight: bold;
+  
+  &:focus {
+    outline: none;
+  }
 `
 
 const ActionWrapper = styled.div`
