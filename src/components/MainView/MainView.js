@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import JsonView from "../JsonView/JsonView";
 import { useState } from "react";
+import ReactGA from "react-ga";
 
 const Root = styled.div`
   display: flex;
@@ -26,6 +27,14 @@ function MainView() {
   const onCloseView = (index) => {
     setJsonViews(jsonViews.filter(({ id }) => id !== index))
   }
+
+  useEffect(() => {
+    ReactGA.event({
+      category: "test category",
+      action: "test action",
+      label: "test label"
+    });
+  })
 
   return (
     <Root>

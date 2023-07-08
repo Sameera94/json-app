@@ -44,10 +44,10 @@ function JsonView(props) {
       />
       <TextArea
         ref={txtRef}
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-        spellcheck="false"
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
         rows="5"
         placeholder='Json here...'
       />
