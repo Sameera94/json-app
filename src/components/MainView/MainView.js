@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from "styled-components";
 import JsonView from "../JsonView/JsonView";
 import { useState } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const Root = styled.div`
   display: flex;
@@ -30,9 +30,8 @@ function MainView() {
 
   useEffect(() => {
     ReactGA.event({
-      category: "test category",
-      action: "test action",
-      label: "test label"
+      category: "Home Page",
+      action: "Home Page View"
     });
   })
 
